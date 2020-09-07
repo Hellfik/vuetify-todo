@@ -1,7 +1,7 @@
 <template>
   <v-app class="grey lighten-4">
     <Navbar />
-    <v-main>
+    <v-main class="mx-4 mb-4">
       <router-view></router-view>
     </v-main>
   </v-app>
@@ -21,4 +21,13 @@ export default {
     //
   }),
 };
+
 </script>
+´
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Monda&display=swap');
+  *{
+    font-family: 'Monda', sans-serif;
+  }
+
+</style>

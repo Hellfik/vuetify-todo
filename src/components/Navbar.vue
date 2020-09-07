@@ -1,13 +1,13 @@
 <template>
     <nav>
-        <v-app-bar flat dark app>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title class="text-uppercase grey--text">
+        <v-app-bar class="primary" flat app>
+            <v-app-bar-nav-icon @click.stop="drawer = !drawer" class="white--text"></v-app-bar-nav-icon>
+            <v-toolbar-title class="text-uppercase white--text">
                 <span class="font-weight-light">Todo </span>
                 <span>Ninja</span>
             </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn text color="grey">
+            <v-btn text color="white">
                 <span>Sign in</span>
                 <v-icon right>
                     mdi-logout
@@ -15,7 +15,7 @@
             </v-btn>
         </v-app-bar>
 
-        <v-navigation-drawer v-model="drawer" dark app>
+        <v-navigation-drawer v-model="drawer" class="primary" app>
             <v-list v-for="(link, index) in links" :key="index">
                 <v-list-item router :to="link.path">
                     <v-list-item-avatar>
@@ -43,6 +43,7 @@ export default {
                 {icon: 'mdi-account', text: 'Team', path: '/team'},
                 
             ],
+
         }
     }
 }
