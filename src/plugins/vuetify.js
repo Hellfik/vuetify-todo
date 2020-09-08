@@ -8,7 +8,8 @@ const vuetify = new Vuetify({
     theme: {
         themes: {
             light: {
-                primary: '#9652ff'
+                primary: '#9652ff',
+                secondary: '#3f51b5'
             }
         }
     }
