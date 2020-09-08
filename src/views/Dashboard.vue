@@ -1,7 +1,30 @@
 <template>
   <div class="dashboard">
     <h1 class="subheading grey--text">Dashboard</h1>
+
     <v-container class="my-5">
+      <v-layout row class="mb-3">
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn small text color="grey" @click="sortBy('title')" v-bind="attrs" v-on="on">
+              <v-icon left small>mdi-folder</v-icon>
+              <span class="caption text-lowercase">By project name</span>
+            </v-btn>
+          </template>
+          <span>Sort projects by project name</span>
+        </v-tooltip>
+
+        <v-tooltip top>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn small text color="grey" @click="sortBy('person')" v-bind="attrs" v-on="on">
+              <v-icon left small>mdi-account</v-icon>
+              <span class="caption text-lowercase">By person name</span>
+            </v-btn>
+          </template>
+          <span>Sort projects by person name</span>
+        </v-tooltip>
+      </v-layout>
+
       <v-card flat v-for="project in projects" :key="project.title">
         <v-layout row wrap :class="`pa-3 project ${project.status}`">
           <v-flex xs12 md6>
@@ -52,6 +75,11 @@ export default {
   },
   components: {
 
+  },
+  methods: {
+    sortBy(prop){
+      this.projects.sort((a,b) => a[prop] < b[prop] ? -1 : 1)
+    }
   }
 }
 </script>

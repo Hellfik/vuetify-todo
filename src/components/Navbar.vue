@@ -16,6 +16,14 @@
         </v-app-bar>
 
         <v-navigation-drawer v-model="drawer" class="primary" app>
+            <v-layout column align-center>
+                <v-flex class="mt-5">
+                    <v-avatar size="100">
+                        <img src="/avatar-1.png">
+                    </v-avatar>
+                    <p class="white--text subheading mt-1">The Ninja Net</p>
+                </v-flex>
+            </v-layout>
             <v-list v-for="(link, index) in links" :key="index">
                 <v-list-item router :to="link.path">
                     <v-list-item-avatar>
